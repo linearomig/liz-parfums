@@ -1,0 +1,23 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@400;500&display=swap');
+
+//Colors
+:root{
+    --icons: #000;
+    --text: #fff;
+    --backgr: #e67225;
+    --price: #ce0606;
+    --placeho: #dbdbdb;
+    --font: #000;
+}
+
+//Reset
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,15 @@
+@import "../styles.scss";
+
+
+.carro {
+  display: flex;
+  padding: 0.5em;
+  text-align: center;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 300;
+  
+  .botao {
+    padding-top: 10px;
+  }
+}
+

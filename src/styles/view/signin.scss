@@ -1,0 +1,31 @@
+@import "../styles.scss";
+
+
+   .quadro {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    margin-top: 30px;
+    padding: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    
+    box-shadow: 2px 0px 10px -5px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 2px 0px 10px -5px rgba(0,0,0,0.8);
+    -moz-box-shadow: 2px 0px 10px -5px rgba(0,0,0,0.8);
+
+    border-radius: 23px 23px 23px 26px;
+    -webkit-border-radius: 23px 23px 23px 26px;
+    -moz-border-radius: 23px 23px 23px 26px;
+    border: 12px hidden;
+   }
+
+   .texto2 {
+      font-family: 'Lexend', sans-serif;
+      margin-top: 20px;
+      font-size: x-large;
+      font-weight: 600;
+   }
+
+   .quadro input::-webkit-input-placeholder {
+      color: var(--placeho);
+    }

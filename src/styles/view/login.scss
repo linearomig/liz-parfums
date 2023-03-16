@@ -1,0 +1,45 @@
+@import "../styles.scss";
+
+
+   .quadrado {
+    padding: 30px;
+    padding-bottom: 20px;
+    margin: 30px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+ 
+    box-shadow: 2px 0px 10px -5px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 2px 0px 10px -5px rgba(0,0,0,0.8);
+    -moz-box-shadow: 2px 0px 10px -5px rgba(0,0,0,0.8);
+
+    border-radius: 23px 23px 23px 26px;
+    -webkit-border-radius: 23px 23px 23px 26px;
+    -moz-border-radius: 23px 23px 23px 26px;
+    border: 12px hidden;
+   }
+
+   .texto {
+      font-weight: 600;
+      font-family: 'Lexend', sans-serif;
+      margin-top: 10px;
+    }
+
+    .btn a {
+      color: var(--text);
+    }
+
+    .registro {
+    font-weight: 200;
+    padding-top: 20px;
+    text-decoration: none;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 200;
+    }
+
+    .registro a{
+      color: var(--font);
+    }
+  
+    .quadrado input::-webkit-input-placeholder {
+      color: var(--placeho);
+    }

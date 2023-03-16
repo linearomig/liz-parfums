@@ -1,0 +1,24 @@
+@import "../styles.scss";
+
+
+
+.foto__producto img {
+    margin-top: 10px;
+    width: 50%;
+    height: auto;
+}
+
+.info__producto {
+    background: #ffffff;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    margin-top: 40px;
+}
+
+.bt i {
+    color: var(--backgr);
+}
+
+i:hover {
+    color: var(--icons);
+   }

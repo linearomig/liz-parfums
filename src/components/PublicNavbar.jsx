@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/component/public.scss';
+import '../styles/component/publicNavbar.scss';
 import Logo from './../assets/logo-liz.svg';
 import { NavLink } from "react-router-dom";
 
@@ -13,6 +13,11 @@ function PublicNavbar() {
   
 
             <div className="navbar-nav barra">
+                <a className="nav-link"><NavLink to="/" 
+                  className={({ isActive }) =>
+                  isActive ? "active" : ""}>Home</NavLink>
+                </a>
+
                 <a className="nav-link"><NavLink to="/nosotros" 
                   className={({ isActive }) =>
                   isActive ? "active" : ""}>Nosotros</NavLink>

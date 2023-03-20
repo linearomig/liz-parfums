@@ -1,7 +1,6 @@
 import React from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 import Footer from "./components/Footer";
 import Nosotros from "./views/Nosotros";
 import Signin from "./views/Signin";
@@ -10,7 +9,6 @@ import Contacto from './views/Contacto';
 import PublicNavbar from "./components/PublicNavbar";
 import Login from "./views/Login";
 import Home from "./views/Home";
-import Carrito from "./views/Carrito";
 import Perfil from "./views/Perfil";
 import Single from "./views/Single";
 import Error from "./views/Error";
@@ -33,14 +31,11 @@ export default function App() {
                 <Route path="/contacto" element={<Contacto />} />
                 <Route path="/carrito" element={<Carrito />} />
                 <Route path="/perfume/" element={<Home />} />
-                <Route path="/perfume/:altProduct" element={<Single />} />
+                <Route path="/perfume/:name" element={<SingleProduct />} />
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="/*" element={<Error/>} />
                 <Route path="/favoritos" element={<Favoritos/>} />
                 <Route path="/productos" element={<CrearProducto/>} />
-
-
-
               </Routes>
           <Footer/>
       </BrowserRouter>

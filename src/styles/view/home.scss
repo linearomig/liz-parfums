@@ -51,16 +51,18 @@
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	background-color: var(--font);
 	padding: 50px;
 	color: var(--text);
 	margin-top: 30px;
 	margin-bottom: -20px;
+	background-image: url('../../assets/image-background.jpg');
+	background-size: cover ;
+	
 }
 
 
 .content p {
-	color: var(--text);
+	color: var(--font);
 	text-transform: uppercase;
 	font-size: x-large;
 	padding: 0 20px 0 20px;
@@ -70,23 +72,24 @@
 	outline: none;
 	background: none;
 	border: none;
-	border-bottom: 2px solid var(--backgr);
+	border-bottom: 2px solid var(--font);
 	cursor: pointer;
-	width: 75%;
+	width: 50%;
+	margin-right: 20px;
 }
 
 .content input::-webkit-input-placeholder {
-	color: var(--text);
+	color: var(--font);
 }
 
 .content button {
-	border: none;
 	color: var(--text);
-	padding: 10px 20px;
-	border-radius: 1rem;
-	font-weight: 400;
-	background-color: var(--backgr);
+	border-radius: 10px;
+	border: none;
+	padding: 5px 10px;
 	cursor: pointer;
+	font-weight: 400;
+	background-color: var(--font);
 }
 
 .filtros input::-webkit-input-placeholder {

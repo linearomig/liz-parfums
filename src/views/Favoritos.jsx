@@ -1,18 +1,10 @@
-//import { useContext } from "react";
-//import PerfumeContext from "../context/providerPerfume";
 import React from "react";
 import { Link } from "react-router-dom";
 
 
+
 export default function Favoritos() {
-    //const { fotos, setFotos } = useContext(PerfumeContext);
-
-    /*const deleteFavorito = (id) => {
-      const fotoIndex = fotos.findIndex((elem) => elem.id === id);
-      fotos[fotoIndex].favorito = !fotos[fotoIndex].favorito;
-      setFotos([...fotos]);
-    };*/
-
+  
   
     return (
       <div>
@@ -49,6 +41,7 @@ export default function Favoritos() {
                 <div className="row gutters">
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-2">
                     <h6 className="mb-2 text-dark text-center"><b>Mis favoritos</b></h6>
+
                   </div>
       </div>
       </div>
@@ -59,4 +52,3 @@ export default function Favoritos() {
       </div></div>
     );
   }
-  

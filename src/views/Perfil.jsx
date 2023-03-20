@@ -20,14 +20,12 @@ function Perfil() {
                   <h6 className="user-email">yuki@test.com</h6>
                 </div>
 
-
                 <div className="favr text-center">
                 <a><p><Link to="/favoritos">Mis Favoritos</Link></p></a>
                 <a><p><Link to="/productos">Crear Productos</Link></p></a>
                 <a><p><Link to="/*">Cambiar Contraseña</Link></p></a>
                 <br/><br/><br/><br/><a><button className='btn btn-danger bot'><Link to="#"><b>Logout</b></Link></button></a>
                 </div>
-
               </div>
             </div>
           </div>

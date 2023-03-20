@@ -39,10 +39,13 @@ function PublicNavbar() {
                   isActive ? "active" : ""}><i className="fa-solid fa-user-plus"></i></NavLink>
                 </a>
 
-                <a className="nav-link carrito"><NavLink to="/carrito" 
+                <div>
+                <a className="nav-link carrito"><NavLink to="/cart" 
                   className={({ isActive }) =>
                   isActive ? "active" : ""}><i class="fa-solid fa-cart-shopping"></i></NavLink>
                 </a>
+                <div className="cartAmount">0</div>
+                </div>
             </div>
 
           </div>

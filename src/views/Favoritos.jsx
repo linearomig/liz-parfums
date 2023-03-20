@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useFavoritosContext } from "../context/FavoritosContext";
 
 
 
 export default function Favoritos() {
-  
+  const {favoritos} = useFavoritosContext()
   
     return (
       <div>
@@ -42,6 +43,10 @@ export default function Favoritos() {
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-2">
                     <h6 className="mb-2 text-dark text-center"><b>Mis favoritos</b></h6>
 
+                        {favoritos.map((product) => {
+                          <div className= "p-3 galeria grid-columns-5"
+                          key={product.img}>{product.img} </div>
+                        })}
                   </div>
       </div>
       </div>

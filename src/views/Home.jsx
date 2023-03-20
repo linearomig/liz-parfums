@@ -6,8 +6,7 @@ import '../styles/view/home.scss';
 export default function Home() {
 
     return (
-        <div className="container">
-        <div className="row">
+        <>
 
             <Products />
 
@@ -25,9 +24,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-        </div>
-        </div>
-
+        
+            </>
     );
 };
 

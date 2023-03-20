@@ -1,0 +1,44 @@
+@import "../styles.scss";
+
+.navbar-brand {
+  font-family: 'Noto Serif Display', serif;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.barra {
+    display: flex;
+    padding: 0.5em;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .nav-link i:hover {
+      color: var(--backgr);
+     }
+  }
+
+.barra a{
+  color: var(--icons);
+}
+  
+
+.carrito{
+  cursor: pointer;
+}
+
+.cartAmount{
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  background-color: var(--price);
+  color: var(--text);
+  font-size:xx-small;
+  padding: 1px ;
+  border-radius: 3px;
+  font-family:'Lexend', sans-serif;
+  font-weight: 300;
+}

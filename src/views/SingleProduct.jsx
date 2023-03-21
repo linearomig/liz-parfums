@@ -2,18 +2,23 @@ import { Link, useParams } from 'react-router-dom';
 import { productList } from '../data';
 import '../styles/view/singleProduct.scss';
 import { formatNumber } from '../plus/formatNumber';
-import { ShopContext } from '../context/ShopContext';
-import { useContext } from 'react';
-import { FavoritosContext } from '../context/favoritosContext';
-
+import {  useState } from 'react';
 
 
 const SingleProduct = () => {
   const { name } = useParams();
   const product = productList.find((product) => product.name === name);
 
-  const { addToCart } = useContext(ShopContext);
-  const { favoritos, addFavoritos, removeFavoritos } = useContext(FavoritosContext);
+  const [favorite, setFavorite] = useState([]);
+
+
+  //Add To Favorite:
+  const addToFavorite = id => {
+    if (!favorite.includes(id)) setFavorite(favorite.concat(id));
+    console.log(id);
+  };
+
+
 
 
   return (
@@ -51,19 +56,16 @@ const SingleProduct = () => {
                 <p>${formatNumber(product.price)}</p>
               </div>
 
+              <button onClick={() => addToFavorite(product.id)}>
+                Favorito </button>
 
               <div className="row">
                 <div className="text-right">
 
-                  <button className="addToCartBttn" onClick={() => { addToCart(itemId) }}>
+                  <button className="addToCartBttn">
                     <i className="fa-solid fa-cart-plus fa-2xl"></i>
                   </button>
 
-
-                  {liked
-                    ? <Button onClick={() => { removeFavoritos(info.id) }}>Eliminar</Button>
-                    : <Button disabled={favoritos.some((image) => image.id == info.id)} onClick={() => { addFavoritos(info) }} >Agregar</Button>
-                  }
 
 
                 </div>

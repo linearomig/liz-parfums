@@ -1,15 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import { ShopContext } from '../context/ShopContext';
 import { productList } from '../data';
 import { CartItem } from './CartItem';
 import '../styles/view/cart.scss';
 
 
 export const Cart = () => {
-  const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
-  const totalAmount = getTotalCartAmount();
 
   const navigate = useNavigate();
 
@@ -27,11 +23,7 @@ export const Cart = () => {
                   <h1>Carro</h1>
                   <br />
                   <div className="cart">
-                    {productList.map((product) => {
-                      if (cartItems[product.id] !== 0) {
-                        return <CartItem data={product} />;
-                      }
-                    })}
+                    
                   </div>
                 </div>
               </div>
@@ -46,15 +38,15 @@ export const Cart = () => {
               <div className="card h-100 m-3">
                 <div className="card-body">
 
-                  {totalAmount > 0 ? (
+                  
                     <div className="checkout">
                       <p> Subtotal: ${totalAmount} </p>
-                      <button onClick={() => navigate("/")}> Seguir Comprando </button>
-                      <button onClick={() => {checkout();navigate("/checkout");}}>{" "}Checkout{" "}</button>
+                      <button> Seguir Comprando </button>
+                      <button >Checkout</button>
                     </div>
-                  ) : (
+                  
                     <h1> Tu bolsa está vacía </h1>
-                  )}
+                  
 
 
                 </div>

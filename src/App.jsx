@@ -1,7 +1,5 @@
 import React from "react"
-import { FavoritosContext } from "./context/favoritosContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ShopContextProvider } from "./context/ShopContext";
 import { UserProvider } from "./context/UserContext";
 
 import Footer from "./components/Footer";
@@ -17,7 +15,7 @@ import SingleProduct from "./views/SingleProduct";
 import Error from "./views/Error";
 import CrearProducto from "./views/CrearProductos";
 import Cart from "./views/Cart";
-import Liked from "./views/Liked";
+import Favoritos from "./views/Favoritos";
 
 
 
@@ -27,8 +25,6 @@ export default function App() {
     <div className="App">
 
       <UserProvider>
-      <ShopContextProvider>
-          <FavoritosContext>
             <BrowserRouter>
               <PublicNavbar />
               <Header />
@@ -47,13 +43,11 @@ export default function App() {
                 
                 {/* Proteted Routes*/}
                 <Route path="/perfil" element={<Perfil />} />
-                <Route path="/favoritos" element={<Liked/>} />
+                <Route path="/favoritos" element={<Favoritos/>} />
                 <Route path="/productos" element={<CrearProducto />} />
               </Routes>
               <Footer />
             </BrowserRouter>
-            </FavoritosContext>
-      </ShopContextProvider>
       </UserProvider>
     </div>
   );

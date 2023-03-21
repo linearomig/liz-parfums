@@ -1,4 +1,8 @@
 import React from "react"
+import { FavoritosContext } from "./context/favoritosContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ShopContextProvider } from "./context/ShopContext";
+import { UserProvider } from "./context/UserContext";
 
 import Footer from "./components/Footer";
 import Nosotros from "./views/Nosotros";
@@ -14,10 +18,7 @@ import Error from "./views/Error";
 import CrearProducto from "./views/CrearProductos";
 import Cart from "./views/Cart";
 import Liked from "./views/Liked";
-import { FavoritosContext } from "./context/favoritosContext";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ShopContextProvider } from "./context/ShopContext";
-import { UserProvider } from "./context/UserContext";
+
 
 
 export default function App() {

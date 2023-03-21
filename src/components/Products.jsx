@@ -65,7 +65,7 @@ const Products = ({ info, liked }) => {
 
                                             {liked
                                                 ? <Button onClick={() => { removeFavoritos(info.id) }}>Eliminar</Button>
-                                                : <Button disabled={favoritos.some((image) => image.id == info.id)} onClick={() => { addFavoritos(info) }} >Agregar</Button>
+                                                : <Button disabled={favoritos.some((img) => img.id == info.id)} onClick={() => { addFavoritos(info) }} >Agregar</Button>
                                             }
                                             <button className="addToCartBttn">
 

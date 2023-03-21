@@ -1,35 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { productList } from '../data';
 import { formatNumber } from '../plus/formatNumber';
 import { Link } from "react-router-dom";
 import '../styles/component/products.scss';
+import { ShopContext } from '../context/ShopContext';
+import { FavoritosContext } from "../context/favoritosContext";
+import { Button } from 'react-bootstrap';
 
 
-const Products = () => {
+const Products = ({ info, liked }) => {
     const [search, setSearch] = useState('');
+    const { favoritos, addFavoritos, removeFavoritos } = useContext(FavoritosContext);
+    const { cartItems, addToCart, updateCartItemCount } = useContext(ShopContext);
+
 
     return (
 
         <div className="container">
-            <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-2">
-                <form className="d-flex" role="search">
-                    <input className="form-control" type="search" placeholder="Buscar producto" aria-label="Search"
-                        onChange={(e) => setSearch(e.target.value)} />
-                </form>
+            <div className='conta'>
+                <div className="container-fluid">
+                    <div className='row'>
+
+                        <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 p-2">
+                            <form className="d-flex" role="search">
+                                <input className="form-control" type="search" placeholder="Buscar producto" />
+                            </form>
+                        </div>
+                        <div className="col-xl-8 col-lg-8 col-md-6 col-sm-6 col-12 p-2">
+                            <form className="d-flex" role="search">
+                                <input className="form-control" type="search" placeholder="Buscar producto" aria-label="Search"
+                                    onChange={(e) => setSearch(e.target.value)} />
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="container-fluid">
                 <div className="productList">
-                    {productList.filter((product) => {
-                        return search.toLowerCase() === ''
-                            ? product
-                            : product.brand.toLowerCase().includes(search);
-                        })
+                    <div className='row'>
+                        <div className="item">
 
-                        .map((product) => (
-                            <div className='row'>
+                            {productList.filter((product) => {
+                                return search.toLowerCase() === ''
+                                    ? product
+                                    : product.brand.toLowerCase().includes(search);
+                            })
 
-                                <div className="item" key={product.id}>
+                                .map((product) => (
+                                    <div>
                                     <img src={product.img} alt={product.altProduct} />
 
                                     <div className="info-product">
@@ -38,32 +57,38 @@ const Products = () => {
                                         <p className="price">${formatNumber(product.price)}</p>
 
                                         <div className="d-flex justify-content-around mb-3">
-                                            <a className="bt"><button
-                                                className="btn btn-light text-white">
-                                                <Link to={`/perfume/${product.name}`}>
-                                                    Ver detalhes</Link>
-                                            </button></a>
+                                            <button
+                                                className="btn btn-light bt">
+                                                <div><Link to={`/perfume/${product.name}`}>
+                                                    Ver detalhes</Link></div>
+                                            </button>
 
-                                            <a className="bt">
+                                            {liked
+                                                ? <Button onClick={() => { removeFavoritos(info.id) }}>Eliminar</Button>
+                                                : <Button disabled={favoritos.some((image) => image.id == info.id)} onClick={() => { addFavoritos(info) }} >Agregar</Button>
+                                            }
+                                            <button className="addToCartBttn">
 
-                                                <i class="fa-solid fa-cart-shopping fa-lg"></i>
-                                            </a>
+                                                <i className="fa-solid fa-cart-plus fa-lg" />
+                                            </button>
+
+
 
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div></div>
 
 
-                        ))}
 
+                                ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Products;
+export default Products
 
 
 

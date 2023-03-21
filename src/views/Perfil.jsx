@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/view/perfil.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Perfil() {
 
@@ -30,9 +30,9 @@ function Perfil() {
                 </div>
 
                 <div className="favr text-center">
-                <a><p><Link to="/favoritos">Mis Favoritos</Link></p></a>
-                <a><p><Link to="/productos">Crear Productos</Link></p></a>
-                <a><p><Link to="/*">Cambiar Contraseña</Link></p></a>
+                <a className="nav-link"><NavLink to="/favoritos" className={({ isActive }) => isActive ? "active" : ""}>Mis Favoritos</NavLink></a>
+                <a className="nav-link"><NavLink to="/productos" className={({ isActive }) => isActive ? "active" : ""}>Crear Producto</NavLink></a>
+                <a className="nav-link"><NavLink to="/*" className={({ isActive }) => isActive ? "active" : ""}>Cambiar Password</NavLink></a>
                 <br/><br/><br/><br/><button className='btn btn-danger bot' type="button" onClick={handleLogout}><b>Logout</b></button>
                 </div>
               </div>

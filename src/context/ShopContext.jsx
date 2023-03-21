@@ -1,4 +1,4 @@
-import React, {createContext, useState} from "react";
+import React, {createContext, useContext, useState} from "react";
 import { productList } from "../data";
 
 
@@ -58,3 +58,5 @@ export const ShopContextProvider = ( {children} ) => {
     </ShopContext.Provider>
   );
 };
+
+export const useShopContext = () => useContext(ShopContext);

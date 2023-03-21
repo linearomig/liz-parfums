@@ -16,13 +16,13 @@ function Nosotros() {
             <br/>Nuestra visión es trabajar siempre con estándares de excelencia en calidad, sirviendo a nuestros clientes y proveedores de una manera clara, humana y con mucho respeto.
             <br/><br/><b>Valores</b>
             <ul className='lista'>
-                <li><i class="fa-solid fa-check"></i> Responsabilidad - Ser responsable de sus acciones y decisiones, en compromiso con los objetivos de la empresa.</li>
-                <li><i class="fa-solid fa-check"></i> Innovación - Búsqueda de nuevas tendencias, estudios y tecnologías en el mercado de la perfumería.</li>
-                <li><i class="fa-solid fa-check"></i> Competencia - Ejercer nuestras atribuciones profesionales con el apoyo de conocimientos, habilidades y actitudes asertivas.</li>
-                <li><i class="fa-solid fa-check"></i> Compromiso - Actuar de manera dedicada y comprometida con los principios, valores, visión y misión de la empresa.</li>
-                <li><i class="fa-solid fa-check"></i> Profesionalismo - Realizar todas las asignaciones con dedicación, ética y respeto.</li>
-                <li><i class="fa-solid fa-check"></i> Transparencia - Actuar e informar de manera clara y veraz con nuestros clientes y colaboradores.</li>
-                <li><i class="fa-solid fa-check"></i> Ética - Actuar de acuerdo a valores que guían una conducta honesta, respetuosa, transparente y honesta.</li>
+                <li><i className="fa-solid fa-check"></i> Responsabilidad - Ser responsable de sus acciones y decisiones, en compromiso con los objetivos de la empresa.</li>
+                <li><i className="fa-solid fa-check"></i> Innovación - Búsqueda de nuevas tendencias, estudios y tecnologías en el mercado de la perfumería.</li>
+                <li><i className="fa-solid fa-check"></i> Competencia - Ejercer nuestras atribuciones profesionales con el apoyo de conocimientos, habilidades y actitudes asertivas.</li>
+                <li><i className="fa-solid fa-check"></i> Compromiso - Actuar de manera dedicada y comprometida con los principios, valores, visión y misión de la empresa.</li>
+                <li><i className="fa-solid fa-check"></i> Profesionalismo - Realizar todas las asignaciones con dedicación, ética y respeto.</li>
+                <li><i className="fa-solid fa-check"></i> Transparencia - Actuar e informar de manera clara y veraz con nuestros clientes y colaboradores.</li>
+                <li><i className="fa-solid fa-check"></i> Ética - Actuar de acuerdo a valores que guían una conducta honesta, respetuosa, transparente y honesta.</li>
             </ul>
                 <b>¿POR QUÉ ELEGIRNOS?</b><br/>
                 ¡Porque entregamos excelentes productos y porque creemos que nuestros clientes son nuestro mayor activo!</p>

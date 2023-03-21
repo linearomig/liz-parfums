@@ -9,6 +9,8 @@ export const CartItem = () => {
   const { product } = productList;
   const { cartItems, addToCart, removeFromCart, updateCartItemCount } = useContext(ShopContext);
 
+    console.log(addToCart)
+
 return (
   <div className="cartItem">
     <img src={product.img} />
@@ -17,15 +19,15 @@ return (
       <p> Price: ${formatNumber(product.price)}</p>
 
       <div className="countHandler">
-        <button onClick={() => removeFromCart(id)}> - </button>
+        <button onClick={() => removeFromCart(itemId)}> - </button>
         <input
           value={cartItems[id]}
-          onChange={(e) => updateCartItemCount(Number(e.target.value), id)}/>
-        <button onClick={() => addToCart(id)}> + </button>
+          onChange={(e) => updateCartItemCount(Number(e.target.value), itemId)}/>
+        <button onClick={() => addToCart(itemId)}> + </button>
       </div>
     </div>
   </div>
 );
 };
 
-export default CartItem;
+export default CartItem; 

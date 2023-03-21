@@ -1,6 +1,4 @@
 import React from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ShopContextProvider } from "./context/ShopContext";
 
 import Footer from "./components/Footer";
 import Nosotros from "./views/Nosotros";
@@ -13,44 +11,49 @@ import Home from "./views/Home";
 import Perfil from "./views/Perfil";
 import SingleProduct from "./views/SingleProduct";
 import Error from "./views/Error";
-import Favoritos from "./views/Favoritos";
 import CrearProducto from "./views/CrearProductos";
 import Cart from "./views/Cart";
-import FavoritosProvider from "./context/FavoritosContext";
-import UserProvider from "./context/UserContext";
-
-
+import Liked from "./views/Liked";
+import { FavoritosContext } from "./context/favoritosContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ShopContextProvider } from "./context/ShopContext";
+import { UserProvider } from "./context/UserContext";
 
 
 export default function App() {
-  
-  return ( 
+
+  return (
     <div className="App">
+
+      <UserProvider>
       <ShopContextProvider>
-        <FavoritosProvider>
-        <UserProvider>
-      <BrowserRouter>
-          <PublicNavbar/>
-          <Header/>
+          <FavoritosContext>
+            <BrowserRouter>
+              <PublicNavbar />
+              <Header />
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
+                {/* Public Routes*/}
                 <Route path="/nosotros" element={<Nosotros />} />
-                <Route path="/signin" element={<Signin />} />
                 <Route path="/contacto" element={<Contacto />} />
+                <Route path="/perfume/:name" element={<SingleProduct />} />
+                <Route path="/*" element={<Error />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/perfume/" element={<Home />} />
-                <Route path="/perfume/:name" element={<SingleProduct />} />
+                <Route path="/login" element={<Login />}/>
+                <Route path="/signin" element={<Signin />} />
+                
+                
+                {/* Proteted Routes*/}
                 <Route path="/perfil" element={<Perfil />} />
-                <Route path="/*" element={<Error/>} />
-                <Route path="/favoritos" element={<Favoritos/>} />
-                <Route path="/productos" element={<CrearProducto/>} />
+                <Route path="/favoritos" element={<Liked/>} />
+                <Route path="/productos" element={<CrearProducto />} />
               </Routes>
-          <Footer/>
-      </BrowserRouter>
-      </UserProvider>
-      </FavoritosProvider>
+              <Footer />
+            </BrowserRouter>
+            </FavoritosContext>
       </ShopContextProvider>
+      </UserProvider>
     </div>
   );
 };

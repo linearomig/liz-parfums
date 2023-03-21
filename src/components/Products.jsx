@@ -3,11 +3,13 @@ import { productList } from '../data';
 import { formatNumber } from '../plus/formatNumber';
 import { Link } from "react-router-dom";
 import '../styles/component/products.scss';
+import { ShopContext } from "../context/ShopContext";
+
 
 
 
 const Products = () => {
-
+    const { cartItems, addToCart } = useContext(ShopContext);
     const [favorite, setFavorite] = useState([]);
     const [search, setSearch] = useState('');
 
@@ -19,12 +21,12 @@ const Products = () => {
     };
 
     //Remove Favorites:
-  const removeFavorite = id => {
-    let index = favorite.indexOf(id);
-    console.log(index);
-    let temp = [...favorite.slice(0, index), ...favorite.slice(index + 1)];
-    setFavorite(temp);
-  };
+    const removeFavorite = id => {
+        let index = favorite.indexOf(id);
+        console.log(index);
+        let temp = [...favorite.slice(0, index), ...favorite.slice(index + 1)];
+        setFavorite(temp);
+    };
 
     //List of Products:
     //let findfavorite = productList.filter(img => favorite.includes(img.id));
@@ -64,10 +66,10 @@ const Products = () => {
                     </div>
                 </div>
             </div>
-            
+
             <div className="container-fluid">
                 <div className="productList">
-                   
+
                     {filtered.map((product) => (
 
                         <div key={product.id}>
@@ -89,11 +91,10 @@ const Products = () => {
                                             </button>
 
                                             <button className="corazon" onClick={() => addToFavorite(product.id)}>
-                                            <i className="fa-solid fa-heart fa-lg" />
+                                                <i className="fa-solid fa-heart fa-lg" />
                                             </button>
 
-                                            <button className="addToCartBttn">
-
+                                            <button onClick={() => addToCart(itemId)}>
                                                 <i className="fa-solid fa-cart-plus fa-lg" />
                                             </button>
 

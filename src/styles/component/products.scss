@@ -1,66 +1,62 @@
 @import "../styles.scss";
 
-
 .conta {
 	align-content: center;
 	align-items: center;
 	text-align: center;
+	font-family: "Lexend", sans-serif;
 }
 
 .productList {
 	display: grid;
-    align-items: center;
-	grid-template-columns: repeat(5, 1fr);
-	gap: 20px;
-	margin-top: 20px;
+	align-items: center;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 60px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .item {
-	border-radius: 10px;
+	border-radius: 20px;
+	padding: 20px;
 }
 
 .item:hover {
-	box-shadow: 0 .5rem 1rem rgba(black, .15);
+	box-shadow: 0 0.5rem 1rem rgba(black, 0.15);
 }
 
 .item img {
 	cursor: pointer;
-    padding: 10px 10px 0px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    height: 280px;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: left;
-    text-shadow: 0px 0px 15px black;
-    
+	align-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 300px;
+	background-size: cover;
+	text-align: center;
+	text-shadow: 0px 0px 10px black;
 }
 
 .item:hover img {
 	transform: scale(0.9);
 	transition: 0.3 ease;
-
 }
 
 .info-product {
-	padding: 15px 30px;
 	line-height: 2;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-    font-family: 'Lexend', sans-serif;
-    font-weight: 400;
-    font-size: medium;
+	font-family: "Lexend", sans-serif;
+	font-weight: 400;
+	font-size: medium;
 	align-content: center;
 	text-align: center;
 }
 
 .price {
-	font-family: 'Lexend', sans-serif;
-    font-weight: 600;
+	font-family: "Lexend", sans-serif;
+	font-weight: 600;
 	color: var(--price);
 	align-content: center;
 	text-align: center;
@@ -68,7 +64,7 @@
 }
 
 .info-product button {
-	border-radius: 10px;
+	border-radius: 5px;
 	padding: 3px 10px;
 	cursor: pointer;
 }
@@ -81,22 +77,21 @@ a:link {
 	color: var(--font);
 }
 
-.bt a{
+.bt a {
 	color: var(--icons);
 }
 
 .addToCartBttn {
-	background-color: transparent;
 	border: none;
+	background-color: rgb(243, 243, 243);
 }
 
-.addToCartBttn i{
+.addToCartBttn i {
 	align-content: center;
 	text-align: center;
 	align-items: center;
 	color: var(--backgr);
 }
-
 
 .addToCartBttn:hover {
 	color: var(--font);
@@ -104,31 +99,20 @@ a:link {
 	cursor: pointer;
 }
 
+.corazon{
+	border: none;
+	background-color: rgb(243, 243, 243);
+}
 
 .corazon i {
 	cursor: pointer;
 	color: var(--font);
-	
 }
 
 .corazon:hover i {
 	color: var(--backgr);
 }
 
-
-.heart {
-	text-decoration: none;
-	border: none;
-	background-color: transparent;
-}
-
-.heart i {
-	padding-top: 30px;
-	cursor: pointer;
+.corazon.active i {
 	color: var(--backgr);
-	
-}
-
-.heart:hover i {
-	color: var(--font);
 }

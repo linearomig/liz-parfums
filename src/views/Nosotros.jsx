@@ -1,9 +1,14 @@
 import React from 'react'
+import Banner from '../components/Banner';
+import PublicNavbar from '../components/PublicNavbar';
+
 import "../styles/view/nosotros.scss";
 
 function Nosotros() {
   return (
     <div>
+      <PublicNavbar/>
+      <Banner />
       <div className='container'>
         <div className='container-fluid texto1'>
             <h2 className='text-center p-3'>Les Parfums de Liz</h2>

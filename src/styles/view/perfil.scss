@@ -6,7 +6,7 @@
 }
 
 .account-settings .user-profile {
-    margin: 0 0 1rem 0;
+    margin: 0 0 10px 0;
     padding-bottom: 1rem;
     text-align: center;
 }
@@ -20,7 +20,7 @@
 }
 
 .account-settings .about {
-    margin: 2rem 0 0 0;
+    margin: 10px 0 0 0;
     text-align: center;
 }
 
@@ -40,7 +40,6 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
     border: 0;
-    margin-bottom: 1rem;
     font-family: 'Lexend', sans-serif;
     font-weight: 300;
 }
@@ -55,4 +54,6 @@
 
 .card input::-webkit-input-placeholder {
     color: var(--placeho);
+    font-family: 'Lexend', sans-serif;
+    
 }

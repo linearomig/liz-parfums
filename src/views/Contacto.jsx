@@ -1,10 +1,16 @@
 import React from 'react';
-
+import Banner from '../components/Banner';
+import PublicNavbar from '../components/PublicNavbar';
 
 
 
 function Contacto() {
   return (
+
+  <div>
+    <PublicNavbar/>
+      <Banner />
+  
     <div className='container'>
       <div className='container-fluid'>
           <h2 className='text-center p-3 texto2'>Cuéntanos ¿En qué te podemos ayudar?</h2>
@@ -38,6 +44,7 @@ function Contacto() {
                 </form>
               </div>
       </div>
+    </div>
     </div>
   );
 }

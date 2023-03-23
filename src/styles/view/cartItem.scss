@@ -1,0 +1,17 @@
+@import "../styles.scss";
+
+* {
+align-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: "Lexend", sans-serif;
+}
+
+.quantidade {
+    background-color: transparent;
+    border-radius: 5px;
+	padding: 5px 15px 5px 15px;
+    margin: 5px;
+    cursor: pointer;
+
+}

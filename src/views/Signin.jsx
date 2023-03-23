@@ -1,76 +1,108 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import '../styles/view/signin.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
+import PublicNavbar from '../components/PublicNavbar';
+import Banner from '../components/Banner';
 
-const Signin =() => {
-    const [displayName, setDisplayName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
-    const [error, setError] = useState("")
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
 
-      setError("")
+const Signin = () => {
 
-      const user = {
-        displayName,
-        email,
-        password
-      }
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-      if(password !== confirmPassword) {
-        setError("La contraseña debe ser la misma")
-        return
-      }
+  const { signin } = useAuth();
+
+  const handleSignup = () => {
+    if (!email | !name | !password | !passwordConfirmation) {
+      setError("Preencha todos os campos");
+      return;
+    } else if (password !== passwordConfirmation) {
+      setError("Os e-mails não são iguais");
+      return;
     }
 
+    const res = signin(email, name, password);
+
+    if (res) {
+      setError(res);
+      return;
+    }
+
+    alert("Usuário cadatrado com sucesso!");
+    navigate("/productos");
+  };
 
 
   return (
+
+<>
+    <PublicNavbar />
+
+    <Banner />
+
     <div className='container'>
-          <h2 className='text-center p-3 texto2'>¡Ingresa tus datos personales y disfruta de una experiencia de compra más rápida!</h2>
-          <div className='quadro'>
-                <form className="row g-3" onSubmit={handleSubmit}>
-                    <div className="col-12">
-                      <label for="inputAddress" className="form-label">Nombre</label>
-                      <input type="text" className='form-control' name='displayName' placeholder="Ingresa tu nombre" value={displayName} onChange={(e) => setDisplayName(e.target.value)}/>
-                    </div>
-                    <div className="col-md-12">
-                      <label for="inputEmail4" className="form-label">Correo electrónico</label>
-                      <input type="email" className='form-control' name='email' placeholder='Ingresa tu correo electrónico' value={email} onChange={(e) => setEmail(e.target.value)}/>
-                    </div>
-                    <div className="col-md-6">
-                      <label for="inputPassword4" className="form-label">Contraseña</label>
-                      <input type="password" className='form-control' name='password' placeholder='Ingresa una contraseña' value={password} onChange={(e) => setPassword(e.target.value)}/> <span id="passwordHelpInline" className="form-text">Debe tener entre 8 y 20 caracteres. </span>
-                    </div>
-                    <div className="col-md-6">
-                      <label for="inputPassword4" className="form-label">Confirma tu contraseña</label>
-                      <input type="password" className='form-control' name='confirmPassword' placeholder='Confirma tu contraseña' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
-                    </div>
-                    
-                    <div className="col-12">
-                      <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="flexCheckChecked" checked/>
-                        <label className="form-check-label" for="gridCheck"> Quiero recibir ofertas, novedades y promociones en mi correo electrónico.</label>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="gridCheck"/>
-                        <label className="form-check-label" for="gridCheck"> Acepto los Términos y Condiciones y la Política de Privacidad de Datos.</label>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <button type="submit" className="btn btn-danger"><Link to="/perfil">Registrarme</Link></button>
-                    </div>
-                    {error && <p className='error'>{error}</p>}
-              </form>
-          <p className='registro'>¿Ya tienes cuenta? <Link to="/login"><b>Inicia sesión</b></Link></p>
+      <h2 className='text-center p-3 texto2'>¡Ingresa tus datos personales y disfruta de una experiencia de compra más rápida!</h2>
+      <div className='quadro'>
+        <form className="row g-3" id="register-form" action="">
+
+          <div className="col-12">
+            <label for="email">E-mail</label>
+            <input className='form-control' type="email" name="email" id="email" placeholder="Correo electrónico" onChange={(e) => [setEmail(e.target.value), setError("")]}></input>
           </div>
+
+          <div className="col-md-6">
+            <label for="name" >Nombre</label>
+            <input className='form-control' type="text" name="name" id="name" placeholder="Nombre" data-required data-min-length="3" data-max-length="16" onChange={(e) => [setName(e.target.value)]}></input>
+          </div>
+
+          <div className="col-md-6">
+            <label for="lastname">Apellido</label>
+            <input className='form-control' type="text" name="lastname" id="lastname" placeholder="Apellido" data-required data-only-letters></input> 
+          </div>
+
+          <div className="col-md-6">
+            <label for="password">Contraseña</label>
+            <input className='form-control' type="password" name="password" id="password" placeholder="Agregue una contraseña" onChange={(e) => [setPassword(e.target.value), setError("")]}></input>
+          </div>
+
+          <div className="col-md-6">
+            <label for="passconfirmation">Confirma tu contraseña</label>
+            <input className='form-control' type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Por favor, confirme su contrasena" data-equal="password" onChange={(e) => [setPasswordConfirmation(e.target.value), setError("")]}></input> 
+          </div>
+
+          
+          <div className="col-12">
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" id="flexCheckChecked" checked />
+              <label className="form-check-label" for="gridCheck"> Quiero recibir ofertas, novedades y promociones en mi correo electrónico.</label>
+            </div>
+          </div>
+          <div className="col-12">
+            <div className="form-check">
+              <input className="form-check-input" type="checkbox" id="gridCheck" />
+              <label className="form-check-label" for="gridCheck"> Acepto los Términos y Condiciones y la Política de Privacidad de Datos.</label>
+            </div>
+          </div>
+          <div className="col-2">
+          <button type="submit" className="btn btn-primary" onClick={handleSignup}>
+             Registrar
+            </button>
+          </div>
+        </form>
+
+        <p className='registro'>¿Ya tienes cuenta? <Link to="/login"><b>Inicia sesión</b></Link></p>
+
+        <div className='error-validation'>{error}</div>
+      </div>
     </div>
+    </>
   )
 }
 

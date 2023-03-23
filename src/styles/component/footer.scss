@@ -1,23 +1,14 @@
 @import "../styles.scss";
 
     .footer {
-
-    background-color: var(--backgr);
-    padding: 30px;
-    margin-top: 50px;
+    width: auto;
+    background-color: rgb(0, 0, 0);
+    padding: 40px 0px 20px 0px;
+   
     text-align: center;
     align-content: center;
     color: var(--text);
     font-family: 'Lexend', sans-serif;
-    }
-
-    .loguinho a{
-        color: var(--text);  
-        padding: 3px;
-
-        a:hover {
-            color: rgb(0, 0, 0);
-        }
     }
 
 

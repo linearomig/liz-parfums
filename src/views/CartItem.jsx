@@ -1,33 +1,52 @@
-import React, { useContext } from "react";
-import { productList } from "../data";
-import { formatNumber } from "../plus/formatNumber";
-import { ShopContext } from "../context/ShopContext";
+import React from "react";
 
+import { formatCurrency } from "../plus/formatNumber";
+import { useCartContext } from "../context/CartContext";
 
-export const CartItem = () => {
+import "../styles/view/cartItem.scss";
 
-  const { product } = productList;
-  const { cartItems, addToCart, removeFromCart, updateCartItemCount } = useContext(ShopContext);
+export const CartItem = ({ item }) => {
+  const { addProductToCart, removeProductFromCart, updateProductOnCart } =
+    useCartContext();
 
-    console.log(addToCart)
+  return (
 
-return (
-  <div className="cartItem">
-    <img src={product.img} />
-    <div className="description">
-      <p><b>{product.name}</b></p>
-      <p> Price: ${formatNumber(product.price)}</p>
-
-      <div className="countHandler">
-        <button onClick={() => removeFromCart(itemId)}> - </button>
-        <input
-          value={cartItems[id]}
-          onChange={(e) => updateCartItemCount(Number(e.target.value), itemId)}/>
-        <button onClick={() => addToCart(itemId)}> + </button>
+    <div className="container-fluid">
+            <div className="row">
+    <div className="productList">
+      <div className="foto__producto ">
+      <img src={item.img} />
       </div>
+      
+      <div className="col">
+          <div className="card border-0">
+            <div className="card-body">
+              <div className="info__producto">
+        <p>
+          <b>{item.name}</b>
+        </p>
+        <p> Price: {formatCurrency(item.price)}</p>
+        </div>
+
+        <div className="countHandler">
+          <button className="btn btn-danger" onClick={() => removeProductFromCart(item)}> - </button>
+          <input className="quantidade"
+            value={item.quantity}
+            onChange={(event) => {
+              const quantity = Number(event.target.value);
+              if (quantity >= 0) {
+                updateProductOnCart(item, quantity);
+              }
+            }}
+          />
+          <button className="btn btn-primary" onClick={() => addProductToCart(item)}> + </button>
+        
+      </div>
+      </div></div></div>
     </div>
-  </div>
-);
+    </div>
+    </div>
+  );
 };
 
-export default CartItem; 
+export default CartItem;

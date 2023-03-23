@@ -1,33 +1,44 @@
 @import "../styles.scss";
 
 .conta {
-  margin-top: 20px;
+  align-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: "Lexend", sans-serif;
+}
+
+.productsCart {
+	display:grid ;
+	align-items: center;
+	grid-template-rows: repeat(4, 1fr);
+	gap: 60px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .card {
-  background: #ffffff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   border: 0;
   margin-bottom: 1rem;
-  font-family: 'Lexend', sans-serif;
   font-weight: 300;
+  color: black;
 }
 
-.countHandler input {
-  width: 40px;
-  text-align: center;
-  font-weight: bolder;
-}
 
 .checkout button {
-  width: 150px;
-  height: 50px;
-  background-color: rgb(19, 19, 19);
   color: white;
   border: none;
   border-radius: 8px;
   margin: 10px;
+  padding: 20x 20px 20px 20px;
   cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.countHandler {
+  display: flex;
+	align-items: center;
+  color: black;
 }

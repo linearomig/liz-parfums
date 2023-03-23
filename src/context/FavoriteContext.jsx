@@ -15,7 +15,6 @@ export const FavoriteProvider = ({ children }) => {
         );
     };
 
-    console.log("favorites", favorites);
 
     return (
         <FavoriteContext.Provider

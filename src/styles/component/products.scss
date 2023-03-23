@@ -1,9 +1,6 @@
 @import "../styles.scss";
 
 .conta {
-	align-content: center;
-	align-items: center;
-	text-align: center;
 	font-family: "Lexend", sans-serif;
 }
 
@@ -65,7 +62,7 @@
 
 .info-product button {
 	border-radius: 5px;
-	padding: 3px 10px;
+	padding: 4px 10px;
 	cursor: pointer;
 }
 
@@ -83,7 +80,6 @@ a:link {
 
 .addToCartBttn {
 	border: none;
-	background-color: rgb(243, 243, 243);
 }
 
 .addToCartBttn i {
@@ -101,7 +97,7 @@ a:link {
 
 .corazon{
 	border: none;
-	background-color: rgb(243, 243, 243);
+	background-color: transparent;
 }
 
 .corazon i {

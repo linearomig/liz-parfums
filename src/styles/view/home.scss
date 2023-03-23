@@ -67,13 +67,12 @@
 
 .content input {
 	display: flex;
+	width: 60%;
 	outline: none;
 	background: none;
 	border: none;
 	border-bottom: 2px solid var(--text);
 	cursor: pointer;
-	width: 50%;
-
 }
 
 .content input::-webkit-input-placeholder {
@@ -81,16 +80,18 @@
 }
 
 .content button {
-
+	display: flex;
+	background-color: var(--font);
 	color: var(--text);
 	border-radius: 10px;
 	border: none;
-	padding: 5px 10px;
+	padding: 10px 10px;
 	cursor: pointer;
-	font-weight: 400;
-	background-color: var(--font);
+	font-weight: 300;
+	
 }
 
 .filtros input::-webkit-input-placeholder {
 	color: var(--placeho);
 }
+

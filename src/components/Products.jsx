@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { productList } from "../data";
 import { formatNumber } from "../plus/formatNumber";
@@ -23,9 +23,8 @@ const Products = () => {
         }
     });
 
-
-
-
+    
+   
 
     return (
         <div className="container">
@@ -36,11 +35,11 @@ const Products = () => {
                         <div className="col-lg-6 col-md-12 col-sm-4">
                             <form className="d-flex" role="select">
                                 <select className="form-select">
-                                    <option value="">Ordernar por:</option>
-                                    <option value="">Precio de mayor a menor</option>
-                                    <option value="">Precio de menor a mayor</option>
-                                    <option value="">Nombre A - Z</option>
-                                    <option value="">Nombre Z - A</option>
+                                    <option value="default">Ordernar por:</option>
+                                    <option value="sortedDes">Precio de mayor a menor</option>
+                                    <option value="sortedAsc"> Precio de menor a mayor </option>
+                                    <option value="sortedAZ">Nombre A - Z</option>
+                                    <option value="sortedZA" >Nombre Z - A</option>
                                 </select>
                             </form>
                         </div>

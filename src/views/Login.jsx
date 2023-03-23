@@ -17,7 +17,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (!email | !password) {
-      setError("Preencha todos os campos");
+      setError("Complete los campos");
       return;
     }
 

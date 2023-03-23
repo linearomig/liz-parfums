@@ -17,20 +17,7 @@ function Home() {
 
             <Products />
 
-            <section className="container">
-                <div className="content d-none d-sm-block">
-                    <div className="news">
-                        <p>
-                            Suscríbete a nuestro newsletter ahora y mantente al
-                            día con nuevas colecciones y ofertas exclusivas.
-                        </p>
-                        <div className="container-fluid">
-                            <input type="email" placeholder="Ingresa el correo aquí..." />
-                            <button type="submit" value="send">Suscríbete</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
 
 
         </>

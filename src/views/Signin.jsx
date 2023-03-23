@@ -21,10 +21,10 @@ const Signin = () => {
 
   const handleSignup = () => {
     if (!email | !name | !password | !passwordConfirmation) {
-      setError("Preencha todos os campos");
+      setError("Faltan datos");
       return;
     } else if (password !== passwordConfirmation) {
-      setError("Os e-mails não são iguais");
+      setError("Las contraseñas no son iguales");
       return;
     }
 
@@ -35,7 +35,7 @@ const Signin = () => {
       return;
     }
 
-    alert("Usuário cadatrado com sucesso!");
+    alert("Usuario creado!");
     navigate("/productos");
   };
 

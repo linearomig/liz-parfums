@@ -60,7 +60,7 @@ export const Cart = () => {
                         </button>
                         <button className="btn btn-primary"
                           onClick={() => {
-                            // checkout();
+                            checkout();
                             navigate("/checkout");
                           }}
                         >

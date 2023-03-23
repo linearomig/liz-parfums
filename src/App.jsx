@@ -33,7 +33,7 @@ export default function App() {
       <AuthProvider>
         <CartProvider>
         <FavoriteProvider>
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
               <Routes>
 
                 <Route path="/" element={<Home />} />

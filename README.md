@@ -1,4 +1,5 @@
 VIDEO YOUTUBE: https://youtu.be/Q6nVy5pHDxU
+DEPLOY: https://lizparfums.netlify.app/
 
 .
 PREGUNTAS FINALIZACIÓN DEL PROYECTO:

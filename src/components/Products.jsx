@@ -16,6 +16,7 @@ const Products = () => {
     const { favorites, addProductToFavorites, removeProductFromFavorites } = useFavoriteContext();
 
     const [search, setSearch] = useState('');
+    const [sort, setSort] = useState()
 
     //Filtered Products by Name
     const filtered = productList.filter((product) => {
@@ -24,21 +25,21 @@ const Products = () => {
         } else if (product.name.toLowerCase().includes(search.toLowerCase())) {
             return product;
         }
-    });
-
-    const sorted = filtered.sort(function (a, b) {
-        if (1 === 1) {
-            return a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0;
+    })
+    .sort( (a, b) => {
+        if (sort === 1) {
+            return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
         }
-        if (2 === 2) {
-            return a.nome > b.nome ? 1 : a.nome > b.nome ? -1 : 0;
+        if (sort === 2) {
+            return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
         }
-        if (3 === 3) {
+        if (sort === 3) {
             return a.price < b.price ? -1 : a.price > b.price ? 1 : 0;
         }
-        if (4 === 4) {
-            return a.price > b.price ? 1 : a.price > b.price ? -1 : 0;
+        if (sort === 4) {
+            return a.price > b.price ? -1 : a.price < b.price ? 1 : 0;
         }
+        return 0;
     });
 
 
@@ -51,12 +52,12 @@ const Products = () => {
 
                         <div className="col-lg-6 col-md-12 col-sm-4">
                             <form className="d-flex" role="select">
-                                <select className="form-select">
-                                    <option value="none" selected disabled hidden>Ordernar por:</option>
-                                    <option value={3} onChange={(event) => {sorted(event.target.value);}}> Precio de mayor a menor</option>
-                                    <option value={4} onChange={(event) => {sorted(event.target.value);}}> Precio de menor a mayor </option>
-                                    <option value={1} onChange={(event) => {sorted(event.target.value);}}> Nombre A - Z</option>
-                                    <option value={2} onChange={(event) => {sorted(event.target.value);}}> Nombre Z - A</option>
+                                <select className="form-select" onChange={(e) => {setSort(Number(e.target.value));}}>
+                                    <option value={0} defaultValue> Ordernar por:</option>
+                                    <option select={sort === 4} value={4} > Precio de mayor a menor</option>
+                                    <option select={sort === 3} value={3} > Precio de menor a mayor </option>
+                                    <option select={sort === 1} value={1} > Nombre A - Z</option>
+                                    <option select={sort === 2} value={2} > Nombre Z - A</option>
                                 </select>
                             </form>
                         </div>

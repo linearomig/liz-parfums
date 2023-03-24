@@ -1,61 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-function CrearProducto() {
 
-  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 
-  const alert = (message, type) => {
-  const wrapper = document.createElement('div')
-    wrapper.innerHTML = [
-      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-      `   <div>${message}</div>`,
-      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-      '</div>'
-    ].join('')
+const CrearProducto = () => {
 
-    alertPlaceholder.append(wrapper)
+  const navigate = useNavigate();
+
+  const [producto, setProducto] = useState("");
+  const [brand, setBrand] = useState("");
+  const [gender, setGender] = useState("");
+  const [price, setPrice] = useState("");
+
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!producto | !brand | !gender | !price) 
+        swal("Complete la información");
+    else if (producto === producto, brand === brand, gender === gender, price === price)
+    swal("Guardando producto...", "Aguarde algunos minutos mientras validamos todas las informaciones", "success")
+    navigate("/");
   }
-
-    const alertTrigger = document.getElementById('liveAlertBtn')
-    if (alertTrigger) {
-      alertTrigger.addEventListener('click', () => {
-        alert('Guardando producto', 'success')
-      })
-    }
-
 
 
   return (
     <div>
-        <div className="container">
-            <div className='conta'>
-            <div className="row gutters">
-                <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                <div className="card h-100 m-3">
-                  <div className="card-body">
-                    <div className="account-settings">
-                      <div className="user-profile">
-                        <div className="user-avatar">
-                          <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg" alt="Maxwell Admin"/>
-                        </div><br/>
-                        <h5 className="user-name">Yuki Hayashi</h5>
-                        <h6 className="user-email">yuki@test.com</h6>
-                      </div>
+      <div className="container">
+        <div className='conta'>
 
-
-                      <div className="favr text-center">
-                      <a><p><Link to="/perfil">Mi Perfil</Link></p></a>
-                      <a><p><Link to="/favoritos">Mis Favoritos</Link></p></a>
-                      <a><p><Link to="/*">Cambiar Contraseña</Link></p></a>
-                      <br/><br/><br/><br/><a><button className='btn btn-danger bot'><Link to="#"><b>Logout</b></Link></button></a>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                </div>
-            <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+          <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
             <div className="card h-100 m-3">
               <div className="card-body">
                 <div className="row gutters">
@@ -65,49 +38,48 @@ function CrearProducto() {
                   </div>
                   <form className="row g-3">
                     <div className="col-6">
-                      <label for="productName" className="form-label">Nombre Producto</label>
-                      <input type="text" className="form-control" id="productName"/>
+                      <label htmlFor="productName" className="form-label">Nombre Producto</label>
+                      <input type="text" className="form-control" id="productName" value={producto} required onChange={(e) => [setProducto(e.target.value)]}/>
                     </div>
 
                     <div className="col-6">
-                      <label for="productBrand" className="form-label">Marca</label>
-                      <input type="text" className="form-control" id="productBrand"/>
+                      <label htmlFor="productBrand" className="form-label">Marca</label>
+                      <input type="text" className="form-control" id="productBrand" value={brand} required onChange={(e) => [setBrand(e.target.value)]}/>
                     </div>
 
                     <div className="col-6">
-                      <label for="productGender" className="form-label">Género</label>
-                      <input type="text" className="form-control" id="productGender"/>
+                      <label htmlFor="productGender" className="form-label">Género</label>
+                      <input type="text" className="form-control" id="productGender" value={gender} required onChange={(e) => [setGender(e.target.value)]}/>
                     </div>
 
                     <div className="col-6">
-                      <label for="productPrice" className="form-label">Precio</label>
-                      <input type="text" className="form-control" id="productPrice"/>
+                      <label htmlFor="productPrice" className="form-label">Precio</label>
+                      <input type="text" className="form-control" id="productPrice" value={price} required onChange={(e) => [setPrice(e.target.value)]}/>
                     </div>
 
                     <div class="mb-3">
-                      <label for="formFileSm" class="form-label">Adjuntar Imagen</label>
+                      <label htmlFor="formFileSm" class="form-label">Adjuntar Imagen</label>
                       <input class="form-control form-control-sm" id="formFileSm" type="file"/>
                     </div>
 
                     <div className="col-12">
-                      <label for="productDescription" class="form-label">Descripción</label>
+                      <label htmlFor="productDescription" class="form-label">Descripción</label>
                       <textarea class="form-control" id="productDescription" rows="2"></textarea>
                     </div>
 
                     <div className="col-12">
-                        <div id="liveAlertPlaceholder"></div>
-                        <button type="button" class="btn btn-success" id="liveAlertBtn">Guardar Producto</button>
+                      <button type="submit" class="btn btn-success" id="" onClick={handleSubmit}>Guardar Producto</button>
                     </div>
 
-                </form>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div></div>
-    
+    </div>
+
   );
 }
 

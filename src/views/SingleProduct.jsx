@@ -5,8 +5,6 @@ import { productList } from "../data";
 import { formatCurrency } from "../plus/formatNumber";
 import { useFavoriteContext } from "../context/FavoriteContext";
 import { useCartContext } from "../context/CartContext";
-import PublicNavbar from "../components/PublicNavbar";
-import Banner from "../components/Banner";
 
 import "../styles/view/singleProduct.scss";
 
@@ -27,9 +25,6 @@ const SingleProduct = () => {
 
   return (
     <div>
-      <PublicNavbar />
-      <Banner />
-
       <div className="row">
         <div className="col-sm-6">
           <div className="card border-0">

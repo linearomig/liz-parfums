@@ -1,41 +1,66 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
-function validarSenha() {
 
-    NovaSenha = document.getElementById('NovaSenha').value;
-    CNovaSenha = document.getElementById('CNovaSenha').value;
+const SetPassword = () => {
 
-    if (NovaSenha != CNovaSenha) {
-        alert("SENHAS DIFERENTES!\nFAVOR DIGITAR SENHAS IGUAIS");
-    } else {
-        document.FormSenha.submit();
+    const navigate = useNavigate();
+
+    const [newPass, setNewPass] = useState("");
+    const [newPassConfirm, setnewPassConfirm] = useState("");
+
+
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (!newPass | !newPassConfirm)
+            swal("Complete la información");
+        else if (newPass !== newPassConfirm)
+            swal("Atención", "Las contraseñas deben coincidir", "error");
+
+        else 
+        swal("Contraseña actualizada")
+        navigate("/perfil");
     }
 
+    return (
+        <div>
+            <div className="container">
+                <div className='conta'>
 
-    <div className="container-fluid container_reset">
-        <div className="row-fluid">
-            <div className="well">
-                <form action="troca_senha.php" method="POST" id="FormSenha" name="FormSenha">
-                    <div className="centraliza_reset">
-                        <fieldset>
-                            <br /><br />
-                            <div className="row">
-                                <div className="span2"></div>
-                                <div className="span3">Nova Senha:</div>
-                                <div className="span6"><input type="password" maxlength="10" id="NovaSenha" /></div>
-                            </div>
-                            <div className="row">
-                                <div className="span2"></div>
-                                <div className="span3">Confirme a nova Senha:</div>
-                                <div className="span6"><input type="password" maxlength="10" id="CNovaSenha" /></div>
-                            </div>
+                    <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div className="card h-100 m-3">
+                            <div className="card-body">
+                                <div className="row gutters">
+                                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-2">
+                                        <h6 className="text-dark"><b>Cambiar contraseña</b></h6>
 
-                            <button type="reset" className="btn btn-primary pull-left botao_limpar_senha">Cancelar</button>
-                            <button type="button" className="btn btn-primary pull-right botao_reset_senha" onClick="validarSenha()">Modificar</button>
-                        </fieldset>
+                                    </div>
+                                    <form className="row g-3">
+                                        <div className="col-6">
+                                            <label htmlFor="newPass" className="form-label">Nueva Contraseña</label>
+                                            <input type="password" className="form-control" id="newPass" value={newPass} onChange={(e) => [setNewPass(e.target.value)]} />
+                                        </div>
+
+                                        <div className="col-6">
+                                            <label htmlFor="newPassConfirm" className="form-label">Confirmar Contraseña</label>
+                                            <input type="password" className="form-control" id="newPassConfirm" value={newPassConfirm}  onChange={(e) => [setnewPassConfirm(e.target.value)]} />
+                                        </div>
+                                        <div className="col-12">
+                                            <button type="submit" class="btn btn-success" id="" onClick={handleSubmit}>Guardar Cambios</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
+
+    );
 }
+
+export default SetPassword;

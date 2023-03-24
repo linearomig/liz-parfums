@@ -4,11 +4,13 @@
 	font-family: "Lexend", sans-serif;
 }
 
-.quantidade {
+.quantidade_btn {
     background-color: transparent;
     border-radius: 5px;
-	padding: 5px 15px 5px 15px;
+	padding: 5px;
     margin: 5px;
     cursor: pointer;
-
+    align-items: center;
+    align-content: center;
+    text-align: center;
 }

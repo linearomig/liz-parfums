@@ -7,7 +7,7 @@ import '../styles/view/error.scss';
 const Error = () => {
   return (
     <div>
-    <PublicNavbar/>
+    
     <section className='section'>
       <h1>404</h1>
       <p>page not found</p>

@@ -1,32 +1,20 @@
 import React from 'react'
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
-import useAuth from "../hooks/useAuth";
-import Signin from './Signin';
-import PrivateNavbar from "../components/PrivateNavbar";
-import Banner from '../components/Banner';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import '../styles/view/perfil.scss';
-
+import useAuth from "../components/useAuth";
 
 
 
 function Perfil() {
 
-  const { email, name, password } = useParams({ Signin })
-
   const { signout } = useAuth();
   const navigate = useNavigate();
-
-
-
 
   return (
 
     <>
 
-      <PrivateNavbar/>
-
-      <Banner />
 
       <div className="container">
         <div className='conta'>
@@ -37,17 +25,14 @@ function Perfil() {
                   <div className="account-settings">
                     <div className="user-profile">
                       <div className="user-avatar">
-                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg" alt="Maxwell Admin" />
+                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg" />
                       </div><br />
-                      <h5 className="user-name">{name}</h5>
-                      <h6 className="user-email">{email}</h6>
-                    </div>
-
-                    <div className="favr text-center">
-                      <a className="nav-link"><NavLink to="/favoritos" className={({ isActive }) => isActive ? "active" : ""}>Mis Favoritos</NavLink></a>
-                      <a className="nav-link"><NavLink to="/new-product" className={({ isActive }) => isActive ? "active" : ""}>Crear Producto</NavLink></a>
-                      <a className="nav-link"><NavLink to="/*" className={({ isActive }) => isActive ? "active" : ""}>Cambiar Contraseña</NavLink></a>
-                      <br/><br/><br/><br/><button className='btn btn-danger bot' type="button" onClick={() => [signout(), navigate("/")]}><b>Salir</b></button>
+                      <div className="favr text-center">
+                        <a className="nav-link"><NavLink to="/favoritos" className={({ isActive }) => isActive ? "active" : ""}>Mis Favoritos</NavLink></a>
+                        <a className="nav-link"><NavLink to="/new-product" className={({ isActive }) => isActive ? "active" : ""}>Crear Producto</NavLink></a>
+                        <a className="nav-link"><NavLink to="/set-password" className={({ isActive }) => isActive ? "active" : ""}>Cambiar Contraseña</NavLink></a>
+                        <br /><br /><br /><br /><button className='btn btn-danger bot' type="button" onClick={() => [signout(), navigate("/")]}><b>Salir</b></button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -65,25 +50,20 @@ function Perfil() {
                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-2">
                       <div className="form-group">
                         <label for="fullName">Nombre</label>
-                        <input type="text" className="form-control" id="fullName" />
+                        <input type="text" className="form-control" id="fullName"></input> 
                       </div>
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-2">
                       <div className="form-group">
                         <label for="eMail">Email</label>
-                        <input type="email" className="form-control" id="eMail" />
+                        <input type="email" className="form-control" id="eMail"></input> 
                       </div>
                     </div>
-                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-2">
-                      <div className="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input type="tel" className="form-control" id="phone" />
-                      </div>
-                    </div>
+                    
                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-2">
                       <div className="form-group">
                         <label for="password">Contraseña</label>
-                        <input type="password" className="form-control" id="password" />
+                        <input type="password" className="form-control" id="password"></input>
                       </div>
                     </div>
                   </div>
@@ -125,9 +105,8 @@ function Perfil() {
                   <div className="row gutters">
                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                       <div className="text-right">
-                        <button type="button" id="submit" name="submit" className="btn btn-secondary">Cancelar</button>
-                        <button type="button" id="submit" name="submit" className="btn btn-primary ms-2">Actualizar datos</button>
-                        <button type="button" id="submit" name="submit" className="btn btn-primary ms-2">Editar datos</button>
+                        <button type="submit" id="submit" name="submit" className="btn btn-secondary">Cancelar</button>
+                        <button type="submit" id="submit" name="submit" className="btn btn-primary ms-2">Actualizar datos</button>
 
                       </div>
                     </div>

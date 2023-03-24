@@ -44,7 +44,7 @@ export const Cart = () => {
                   <div className="checkout d-flex">
                     <div className="row">
                       <p>Subtotal: {total}</p>
-                      <button className="btn btn-secondary " onClick={() => navigate("/productos")}>
+                      <button className="btn btn-secondary " onClick={() => navigate("/")}>
                         Seguir Comprando{" "}
                       </button>
                       <button className="btn btn-success"

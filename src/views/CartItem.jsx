@@ -30,7 +30,7 @@ export const CartItem = ({ item }) => {
 
                 <div className="countHandler">
                   <button className="btn btn-danger" onClick={() => removeProductFromCart(item)}> - </button>
-                  <input className="quantidade-btn"
+                  <input className="btn quantidade"
                     value={item.quantity}
                     onChange={(event) => {
                       const quantity = Number(event.target.value);

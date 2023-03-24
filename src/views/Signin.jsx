@@ -35,7 +35,7 @@ const Signin = () => {
         }
 
         swal("Usuario creado!");
-        navigate("/");
+        navigate("/login");
     };
 
 

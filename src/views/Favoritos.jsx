@@ -38,7 +38,7 @@ const Favoritos = () => {
                         <p className="price">{formatCurrency(product.price)}</p>
 
                         <div className="d-flex justify-content-around">
-                          <button className="btn btn-light bt">
+                          <button className="btn btn-dark">
                             <div>
                               <Link to={`/perfume/${product.name}`}>
                                 Detalhes
@@ -46,7 +46,7 @@ const Favoritos = () => {
                             </div>
                           </button>
 
-                          <button
+                          <button className="btn btn-danger"
                             onClick={() => removeProductFromFavorites(product)}
                           >
                             Remover de favoritos

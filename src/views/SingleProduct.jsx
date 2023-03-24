@@ -41,7 +41,7 @@ const SingleProduct = () => {
             <div className="card-body">
               <div className="info__producto">
                 <i className="fa-solid fa-left-long"></i>
-                <Link to="/perfume"> Volver a Perfumes </Link>
+                <Link to="/"> Volver a Perfumes </Link>
                 <br />
                 <br />
                 <br />
@@ -61,7 +61,7 @@ const SingleProduct = () => {
                 <p>{formatCurrency(product.price)}</p>
               </div>
 
-              <button
+              <button className="btn btn-dark"
                 onClick={() => {
                   if (isFavorite) {
                     removeProductFromFavorites(product);
@@ -71,20 +71,21 @@ const SingleProduct = () => {
                   addProductToFavorites(product);
                 }}
               >
+
                 {isFavorite ? "Remover" : ""} Favorito{" "}
               </button>
 
-              <div className="row">
-                <div className="text-right">
-                  <button
-                    className="addToCartBttn"
-                    onClick={() => addProductToCart(product)}
-                  >
-                    <i className="fa-solid fa-cart-plus fa-2xl"></i>
-                  </button>
-                </div>
-              </div>
+              <>
+
+                <button
+                  className="btn addC"
+                  onClick={() => addProductToCart(product)}
+                >
+                  <i className="fa-solid fa-cart-plus fa-2x"></i>
+                </button>
+              </>
             </div>
+
           </div>
         </div>
       </div>

@@ -112,3 +112,22 @@ a:link {
 .corazon.active i {
 	color: var(--backgr);
 }
+
+.addC{
+	border: none;
+	background-color: white;
+}
+
+.addC i {
+	cursor: pointer;
+	color: var(--font);
+	background-color: white;
+}
+
+.addC:hover i {
+	color: #a80303;
+}
+
+.addC.active i {
+	color: #a80303;
+}

@@ -104,7 +104,7 @@ const Products = () => {
                                             <p className="price">${formatNumber(product.price)}</p>
 
                                             <div className="d-flex justify-content-around">
-                                                <button className="btn btn-dark bt">
+                                                <button className="btn btn-dark">
                                                     <div>
                                                         <Link to={`/perfume/${product.name}`}>
                                                             Ver detalhes
@@ -123,11 +123,11 @@ const Products = () => {
                                                         addProductToFavorites(product);
                                                     }}
                                                 >
-                                                    <i className="fa-solid fa-heart fa-lg" />
+                                                    <i className="fa-solid fa-heart fa-2x" />
                                                 </button>
 
-                                                <button onClick={() => addProductToCart(product)}>
-                                                    <i className="fa-solid fa-cart-plus fa-lg" />
+                                                <button className="btn addC" onClick={() => addProductToCart(product)}>
+                                                    <i className="fa-solid fa-cart-plus fa-2x" />
                                                 </button>
                                             </div>
                                         </div>
